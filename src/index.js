@@ -17,7 +17,7 @@ const isLocalhost = Boolean(
 
 export function register (swUrl, hooks) {
   const emit = (hook, ...args) => {
-    if (hooks[hook]) {
+    if (hooks && hooks[hook]) {
       hooks[hook](...args)
     }
   }
