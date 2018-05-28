@@ -13,10 +13,10 @@ register('/service-worker.js', {
   ready () {
     console.log('Service worker is active.')
   },
-  cached () {
+  cached (registration) {
     console.log('Content has been cached for offline use.')
   },
-  updated () {
+  updated (registration) {
     console.log('New content is available; please refresh.')
   },
   offline () {
@@ -27,3 +27,5 @@ register('/service-worker.js', {
   }
 })
 ```
+
+The `cached` and `updated` events passes a [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) instance in their arguments.
