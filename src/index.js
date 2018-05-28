@@ -51,12 +51,12 @@ function registerValidSW (swUrl, emit) {
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
-              emit('updated')
+              emit('updated', registration)
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
-              emit('cached')
+              emit('cached', registration)
             }
           }
         }
