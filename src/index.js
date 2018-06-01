@@ -42,6 +42,7 @@ function registerValidSW (swUrl, emit) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      emit('registered', registration)
       registration.onupdatefound = () => {
         const installingWorker = registration.installing
         installingWorker.onstatechange = () => {

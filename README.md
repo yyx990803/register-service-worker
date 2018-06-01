@@ -13,6 +13,9 @@ register('/service-worker.js', {
   ready () {
     console.log('Service worker is active.')
   },
+  registered (registration) {
+    console.log('Service worker has been registered.')
+  },
   cached (registration) {
     console.log('Content has been cached for offline use.')
   },
