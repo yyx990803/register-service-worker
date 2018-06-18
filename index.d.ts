@@ -1,5 +1,6 @@
 export type Hooks = {
   ready?: () => void;
+  registered?: (registration: any) => void;
   cached?: (registration: any) => void;
   updated?: (registration: any) => void;
   offline?: () => void;
