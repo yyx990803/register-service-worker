@@ -44,6 +44,7 @@ function registerValidSW (swUrl, emit) {
     .then(registration => {
       emit('registered', registration)
       registration.onupdatefound = () => {
+        emit('updatefound')
         const installingWorker = registration.installing
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
