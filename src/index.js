@@ -62,6 +62,10 @@ function registerValidSW (swUrl, emit) {
           }
         }
       }
+      // Check if there is a worker that has been previously installed but has not yet been activated
+      if (registration.waiting) {
+        emit('updated', registration)
+      }
     })
     .catch(error => {
       emit('error', error)
