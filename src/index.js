@@ -43,6 +43,10 @@ function registerValidSW (swUrl, emit) {
     .register(swUrl)
     .then(registration => {
       emit('registered', registration)
+      if (registration.waiting) {
+        emit('updated', registration)
+        return
+      }
       registration.onupdatefound = () => {
         emit('updatefound')
         const installingWorker = registration.installing
