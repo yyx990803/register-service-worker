@@ -1,3 +1,13 @@
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/yyx990803/register-service-worker/compare/v1.5.0...v1.5.1) (2018-08-13)
+
+
+### Bug Fixes
+
+* **types:** add type for updatefound event ([2be9827](https://github.com/yyx990803/register-service-worker/commit/2be9827))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/yyx990803/register-service-worker/compare/v1.4.1...v1.5.0) (2018-08-13)
 
