@@ -27,8 +27,8 @@ export function register (swUrl, hooks) {
       if (isLocalhost) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, emit)
-        navigator.serviceWorker.ready.then(() => {
-          emit('ready')
+        navigator.serviceWorker.ready.then(registration => {
+          emit('ready', registration)
         })
       } else {
         // Is not local host. Just register service worker
@@ -48,7 +48,7 @@ function registerValidSW (swUrl, emit) {
         return
       }
       registration.onupdatefound = () => {
-        emit('updatefound')
+        emit('updatefound', registration)
         const installingWorker = registration.installing
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
