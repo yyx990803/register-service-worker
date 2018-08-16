@@ -5,7 +5,7 @@
 // will only see deployed updates on the "N+1" visit to a page, since previously
 // cached resources are updated in the background.
 
-const isLocalhost = Boolean(
+const isLocalhost = () => Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
@@ -24,7 +24,7 @@ export function register (swUrl, hooks) {
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      if (isLocalhost) {
+      if (isLocalhost()) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, emit)
         navigator.serviceWorker.ready.then(() => {
