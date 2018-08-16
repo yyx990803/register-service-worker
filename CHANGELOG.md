@@ -1,3 +1,13 @@
+<a name="1.5.2"></a>
+## [1.5.2](https://github.com/yyx990803/register-service-worker/compare/v1.5.1...v1.5.2) (2018-08-16)
+
+
+### Bug Fixes
+
+* fix missing registration arguments ([#11](https://github.com/yyx990803/register-service-worker/issues/11)) ([d11b254](https://github.com/yyx990803/register-service-worker/commit/d11b254))
+
+
+
 <a name="1.5.1"></a>
 ## [1.5.1](https://github.com/yyx990803/register-service-worker/compare/v1.5.0...v1.5.1) (2018-08-13)
 
