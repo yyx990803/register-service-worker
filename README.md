@@ -10,7 +10,7 @@ A script to simplify service worker registration with hooks for common events.
 import { register } from 'register-service-worker'
 
 register('/service-worker.js', {
-  ready () {
+  ready (registration) {
     console.log('Service worker is active.')
   },
   registered (registration) {
@@ -34,4 +34,4 @@ register('/service-worker.js', {
 })
 ```
 
-The `cached`, `updatefound` and `updated` events passes a [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) instance in their arguments.
+The `ready`, `registered`, `cached`, `updatefound` and `updated` events passes a [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) instance in their arguments.

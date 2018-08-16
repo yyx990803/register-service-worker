@@ -29,17 +29,6 @@
 
 
 
-<a name="1.5.0"></a>
-# [1.5.0](https://github.com/yyx990803/register-service-worker/compare/v1.4.1...v1.5.0) (2018-08-13)
-
-
-### Features
-
-* add "updatefound" event ([#7](https://github.com/yyx990803/register-service-worker/issues/7)) ([bee2641](https://github.com/yyx990803/register-service-worker/commit/bee2641))
-* emit updated event when registration.waiting was found ([#9](https://github.com/yyx990803/register-service-worker/issues/9)) ([937040f](https://github.com/yyx990803/register-service-worker/commit/937040f))
-
-
-
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/yyx990803/register-service-worker/compare/v1.4.0...v1.4.1) (2018-06-18)
 
