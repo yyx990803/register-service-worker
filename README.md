@@ -10,6 +10,7 @@ A script to simplify service worker registration with hooks for common events.
 import { register } from 'register-service-worker'
 
 register('/service-worker.js', {
+  registrationOptions: { scope: './' },
   ready (registration) {
     console.log('Service worker is active.')
   },
