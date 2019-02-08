@@ -1,3 +1,19 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/yyx990803/register-service-worker/compare/v1.5.2...v1.6.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **types:** make hooks parameter optional ([#18](https://github.com/yyx990803/register-service-worker/issues/18)) ([283c570](https://github.com/yyx990803/register-service-worker/commit/283c570))
+* misleading error when wrong MIME type returned ([#21](https://github.com/yyx990803/register-service-worker/issues/21)) ([#22](https://github.com/yyx990803/register-service-worker/issues/22)) ([d3287d3](https://github.com/yyx990803/register-service-worker/commit/d3287d3))
+
+
+### Features
+
+* registration options ([#17](https://github.com/yyx990803/register-service-worker/issues/17)) ([c6f0386](https://github.com/yyx990803/register-service-worker/commit/c6f0386))
+
+
+
 <a name="1.5.2"></a>
 ## [1.5.2](https://github.com/yyx990803/register-service-worker/compare/v1.5.1...v1.5.2) (2018-08-16)
 
