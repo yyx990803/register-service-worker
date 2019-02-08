@@ -78,12 +78,14 @@ function checkValidServiceWorker (swUrl, emit) {
   fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
-      if (
-        response.status === 404 ||
-        response.headers.get('content-type').indexOf('javascript') === -1
-      ) {
+      if (response.status === 404) {
         // No service worker found.
         emit('error', new Error(`Service worker not found at ${swUrl}`))
+        unregister()
+      } else if (response.headers.get('content-type').indexOf('javascript') === -1) {
+        emit('error', new Error(
+          `Expected ${swUrl} to have javascript content-type, ` +
+          `but received ${response.headers.get('content-type')}`))
         unregister()
       } else {
         // Service worker found. Proceed as normal.
