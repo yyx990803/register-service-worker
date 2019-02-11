@@ -1,5 +1,5 @@
 export type Hooks = {
-  registrationOptions: RegistrationOptions;
+  registrationOptions?: RegistrationOptions;
   ready?: (registration: any) => void;
   registered?: (registration: any) => void;
   cached?: (registration: any) => void;
