@@ -1,3 +1,24 @@
+<a name="1.6.1"></a>
+## [1.6.1](https://github.com/yyx990803/register-service-worker/compare/v1.4.1...v1.6.1) (2019-02-11)
+
+
+### Bug Fixes
+
+* **types:** add type for updatefound event ([2be9827](https://github.com/yyx990803/register-service-worker/commit/2be9827))
+* fix missing registration arguments ([#11](https://github.com/yyx990803/register-service-worker/issues/11)) ([d11b254](https://github.com/yyx990803/register-service-worker/commit/d11b254))
+* **types:** make hooks parameter optional ([#18](https://github.com/yyx990803/register-service-worker/issues/18)) ([283c570](https://github.com/yyx990803/register-service-worker/commit/283c570))
+* misleading error when wrong MIME type returned ([#21](https://github.com/yyx990803/register-service-worker/issues/21)) ([#22](https://github.com/yyx990803/register-service-worker/issues/22)) ([d3287d3](https://github.com/yyx990803/register-service-worker/commit/d3287d3))
+* **types:** Make registrationOptions optional ([#24](https://github.com/yyx990803/register-service-worker/issues/24)) ([27d74c2](https://github.com/yyx990803/register-service-worker/commit/27d74c2)), closes [#23](https://github.com/yyx990803/register-service-worker/issues/23)
+
+
+### Features
+
+* add "updatefound" event ([#7](https://github.com/yyx990803/register-service-worker/issues/7)) ([bee2641](https://github.com/yyx990803/register-service-worker/commit/bee2641))
+* emit updated event when registration.waiting was found ([#9](https://github.com/yyx990803/register-service-worker/issues/9)) ([937040f](https://github.com/yyx990803/register-service-worker/commit/937040f))
+* registration options ([#17](https://github.com/yyx990803/register-service-worker/issues/17)) ([c6f0386](https://github.com/yyx990803/register-service-worker/commit/c6f0386))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/yyx990803/register-service-worker/compare/v1.5.2...v1.6.0) (2019-02-08)
 
