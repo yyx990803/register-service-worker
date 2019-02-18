@@ -1,3 +1,13 @@
+<a name="1.6.2"></a>
+## [1.6.2](https://github.com/yyx990803/register-service-worker/compare/v1.6.1...v1.6.2) (2019-02-18)
+
+
+### Bug Fixes
+
+* remove default scope from registrationOptions ([#26](https://github.com/yyx990803/register-service-worker/issues/26)) ([73794b4](https://github.com/yyx990803/register-service-worker/commit/73794b4))
+
+
+
 <a name="1.6.1"></a>
 ## [1.6.1](https://github.com/yyx990803/register-service-worker/compare/v1.4.1...v1.6.1) (2019-02-11)
 
