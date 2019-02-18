@@ -16,7 +16,7 @@ const isLocalhost = () => Boolean(
 )
 
 export function register (swUrl, hooks = {}) {
-  const { registrationOptions = { scope: '/' }} = hooks
+  const { registrationOptions = {}} = hooks
   delete hooks.registrationOptions
 
   const emit = (hook, ...args) => {
