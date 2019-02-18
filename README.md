@@ -36,3 +36,5 @@ register('/service-worker.js', {
 ```
 
 The `ready`, `registered`, `cached`, `updatefound` and `updated` events passes a [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) instance in their arguments.
+
+The `registrationOptions` object will be passed as the second argument to [`ServiceWorkerContainer.register()`](https://developer.mozilla.org/de/docs/Web/API/ServiceWorkerContainer/register#Parameter)
