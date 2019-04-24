@@ -1,2 +1,64 @@
-node_modules
-/index.js
+#built application files
+*.apk
+*.ap_
+
+
+# files for the dex VM
+*.dex
+
+
+# Java class files
+*.class
+
+
+# generated files
+bin/
+gen/
+
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+
+# Windows thumbnail db
+Thumbs.db
+
+
+# OSX files
+.DS_Store
+.vs
+
+
+# Eclipse project files
+.classpath
+.project
+
+
+# Android Studio
+.idea
+#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.gradle
+
+
+# Signing files
+.signing/
+
+*node_modules/
+node_modules/
+.DS_Store
+docs/_book
+
+
+# User-specific configurations
+.idea/libraries/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+*.iml
