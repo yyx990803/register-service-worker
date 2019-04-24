@@ -4,15 +4,15 @@
 // it offline capabilities. However, it also means that developers (and users)
 // will only see deployed updates on the "N+1" visit to a page, since previously
 // cached resources are updated in the background.
-
+const ip = /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/;
+let hostname = window.location.hostname;
+let self = navigator.serviceWorker;
 const isLocalhost = () => Boolean(
-  window.location.hostname === 'localhost' ||
+  hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
-    window.location.hostname === '[::1]' ||
+    hostname === '[::1]' ||
     // 127.0.0.1/8 is considered localhost for IPv4.
-    window.location.hostname.match(
-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-    )
+    hostname.match(ip)
 )
 
 export function register (swUrl, hooks = {}) {
@@ -30,7 +30,7 @@ export function register (swUrl, hooks = {}) {
       if (isLocalhost()) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, emit, registrationOptions)
-        navigator.serviceWorker.ready.then(registration => {
+        self.ready.then(registration => {
           emit('ready', registration)
         })
       } else {
@@ -42,8 +42,7 @@ export function register (swUrl, hooks = {}) {
 }
 
 function registerValidSW (swUrl, emit, registrationOptions) {
-  navigator.serviceWorker
-    .register(swUrl, registrationOptions)
+  self.register(swUrl, registrationOptions)
     .then(registration => {
       emit('registered', registration)
       if (registration.waiting) {
@@ -55,7 +54,7 @@ function registerValidSW (swUrl, emit, registrationOptions) {
         const installingWorker = registration.installing
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
-            if (navigator.serviceWorker.controller) {
+            if (self.controller) {
               // At this point, the old content will have been purged and
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
@@ -106,7 +105,7 @@ function checkValidServiceWorker (swUrl, emit, registrationOptions) {
 
 export function unregister () {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    self.ready.then(registration => {
       registration.unregister()
     })
   }
