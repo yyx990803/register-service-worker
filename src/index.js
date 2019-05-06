@@ -15,6 +15,8 @@ const isLocalhost = () => Boolean(
     )
 )
 
+const waitWindowLoad = new Promise(resolve => window.addEventListener('load', resolve))
+
 export function register (swUrl, hooks = {}) {
   const { registrationOptions = {}} = hooks
   delete hooks.registrationOptions
@@ -26,7 +28,7 @@ export function register (swUrl, hooks = {}) {
   }
 
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+    waitWindowLoad.then(() => {
       if (isLocalhost()) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, emit, registrationOptions)
