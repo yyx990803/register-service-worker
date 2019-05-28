@@ -44,9 +44,8 @@ export function register (swUrl, hooks = {}) {
 function handleError (emit, error) {
   if (!navigator.onLine) {
     emit('offline')
-  } else {
-    emit('error', error)
   }
+  emit('error', error)
 }
 
 function registerValidSW (swUrl, emit, registrationOptions) {
