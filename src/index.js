@@ -36,6 +36,9 @@ export function register (swUrl, hooks = {}) {
       } else {
         // Is not local host. Just register service worker
         registerValidSW(swUrl, emit, registrationOptions)
+        navigator.serviceWorker.ready.then(registration => {
+          emit('ready', registration)
+        })
       }
     })
   }
