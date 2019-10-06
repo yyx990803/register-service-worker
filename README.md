@@ -21,10 +21,10 @@ register('/service-worker.js', {
     console.log('Content has been cached for offline use.')
   },
   updatefound (registration) {
-    console.log('New content is downloading.')
+    console.log('New content is available; please refresh.')
   },
   updated (registration) {
-    console.log('New content is available; please refresh.')
+    console.log('New content is downloading.')
   },
   offline () {
     console.log('No internet connection found. App is running in offline mode.')
