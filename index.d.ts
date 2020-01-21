@@ -1,10 +1,10 @@
 export type Hooks = {
   registrationOptions?: RegistrationOptions;
-  ready?: (registration: any) => void;
-  registered?: (registration: any) => void;
-  cached?: (registration: any) => void;
-  updated?: (registration: any) => void;
-  updatefound?: (registration: any) => void;
+  ready?: (registration: ServiceWorkerRegistration) => void;
+  registered?: (registration: ServiceWorkerRegistration) => void;
+  cached?: (registration: ServiceWorkerRegistration) => void;
+  updated?: (registration: ServiceWorkerRegistration) => void;
+  updatefound?: (registration: ServiceWorkerRegistration) => void;
   offline?: () => void;
   error?: (error: Error) => void;
 };
