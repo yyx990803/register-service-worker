@@ -41,6 +41,13 @@ export function register (swUrl, hooks = {}) {
   }
 }
 
+function handleError (emit, error) {
+  if (!navigator.onLine) {
+    emit('offline')
+  }
+  emit('error', error)
+}
+
 function registerValidSW (swUrl, emit, registrationOptions) {
   navigator.serviceWorker
     .register(swUrl, registrationOptions)
@@ -71,9 +78,7 @@ function registerValidSW (swUrl, emit, registrationOptions) {
         }
       }
     })
-    .catch(error => {
-      emit('error', error)
-    })
+    .catch(error => handleError(emit, error))
 }
 
 function checkValidServiceWorker (swUrl, emit, registrationOptions) {
@@ -95,13 +100,7 @@ function checkValidServiceWorker (swUrl, emit, registrationOptions) {
         registerValidSW(swUrl, emit, registrationOptions)
       }
     })
-    .catch(error => {
-      if (!navigator.onLine) {
-        emit('offline')
-      } else {
-        emit('error', error)
-      }
-    })
+    .catch(error => handleError(emit, error))
 }
 
 export function unregister () {
