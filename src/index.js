@@ -15,7 +15,16 @@ const isLocalhost = () => Boolean(
     )
 )
 
-const waitWindowLoad = new Promise(resolve => window.addEventListener('load', resolve))
+let waitWindowLoad
+// Typically, a browser that supports `serviceWorker` should also have supported
+// `Promise`. But as this package can be used in environments without service
+// worker support (in that case it would do nothing), there's a chance that
+// `Promise` does not exist. So we must check for its existence first.
+if (typeof Promise !== 'undefined') {
+  waitWindowLoad = new Promise(resolve => window.addEventListener('load', resolve))
+} else {
+  waitWindowLoad = { then: (cb) => window.addEventListener('load', cb) }
+}
 
 export function register (swUrl, hooks = {}) {
   const { registrationOptions = {}} = hooks
