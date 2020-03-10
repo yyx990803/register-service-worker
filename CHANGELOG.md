@@ -1,3 +1,14 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/yyx990803/register-service-worker/compare/v1.6.2...v1.7.0) (2020-03-10)
+
+
+### Features
+
+* also emit 'offline' in non-localhost ([#32](https://github.com/yyx990803/register-service-worker/issues/32)) ([c94341e](https://github.com/yyx990803/register-service-worker/commit/c94341e))
+* also emit 'ready' in non-localhost ([#37](https://github.com/yyx990803/register-service-worker/issues/37)) ([16d2a77](https://github.com/yyx990803/register-service-worker/commit/16d2a77)), closes [#20](https://github.com/yyx990803/register-service-worker/issues/20)
+* allow `register` to be called on-demand after `onload` event ([#33](https://github.com/yyx990803/register-service-worker/issues/33)) ([5f96e33](https://github.com/yyx990803/register-service-worker/commit/5f96e33))
+
+
 <a name="1.6.2"></a>
 ## [1.6.2](https://github.com/yyx990803/register-service-worker/compare/v1.6.1...v1.6.2) (2019-02-18)
 
