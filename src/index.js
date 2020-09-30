@@ -46,13 +46,13 @@ export function register (swUrl, hooks = {}) {
         checkValidServiceWorker(swUrl, emit, registrationOptions)
         navigator.serviceWorker.ready.then(registration => {
           emit('ready', registration)
-        })
+        }).catch(error => handleError(emit, error))
       } else {
         // Is not local host. Just register service worker
         registerValidSW(swUrl, emit, registrationOptions)
         navigator.serviceWorker.ready.then(registration => {
           emit('ready', registration)
-        })
+        }).catch(error => handleError(emit, error))
       }
     })
   }
@@ -124,6 +124,6 @@ export function unregister () {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
       registration.unregister()
-    })
+    }).catch(error => handleError(emit, error))
   }
 }
