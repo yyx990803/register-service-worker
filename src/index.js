@@ -15,6 +15,12 @@ const isLocalhost = () => Boolean(
     )
 )
 
+const isNetwork = () => Boolean(
+  window.location.hostname.match(
+    /^10(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+  )
+)
+
 let waitWindowLoad
 // https://github.com/yyx990803/register-service-worker/pull/33#discussion_r394181861
 if (typeof window !== 'undefined') {
@@ -41,7 +47,7 @@ export function register (swUrl, hooks = {}) {
 
   if ('serviceWorker' in navigator) {
     waitWindowLoad.then(() => {
-      if (isLocalhost()) {
+      if (isLocalhost() || isNetwork()) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, emit, registrationOptions)
         navigator.serviceWorker.ready.then(registration => {
