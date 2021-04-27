@@ -100,7 +100,7 @@ function registerValidSW (swUrl, emit, registrationOptions) {
 
 function checkValidServiceWorker (swUrl, emit, registrationOptions) {
   // Check if the service worker can be found.
-  fetch(swUrl)
+  fetch(swUrl, {cache: "no-store"})
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       if (response.status === 404) {
