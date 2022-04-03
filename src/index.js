@@ -15,6 +15,8 @@ const isLocalhost = () => Boolean(
     )
 )
 
+let emit = console.error
+
 let waitWindowLoad
 // https://github.com/yyx990803/register-service-worker/pull/33#discussion_r394181861
 if (typeof window !== 'undefined') {
@@ -33,7 +35,7 @@ export function register (swUrl, hooks = {}) {
   const { registrationOptions = {}} = hooks
   delete hooks.registrationOptions
 
-  const emit = (hook, ...args) => {
+  emit = (hook, ...args) => {
     if (hooks && hooks[hook]) {
       hooks[hook](...args)
     }
